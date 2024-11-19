@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng 20/11</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url('bg.jpg'); /* Đặt đường dẫn đến hình ảnh nền */
+            background-size: cover; /* Đảm bảo hình nền bao phủ toàn bộ trang */
+            background-position: center; /* Đảm bảo hình nền luôn căn giữa */
+            background-attachment: fixed; /* Hình nền cố định khi cuộn trang */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8); /* Thêm độ mờ cho nền thiệp */
+            width: 800px;
+            padding: 50px;
+            border-radius: 200px;
+            box-shadow: 0px 20px 200px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 3px solid #ff4d4d;
+            animation: slideInFromTop 2s ease-out forwards, neonBorder 2s linear infinite;
+            opacity: 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, transform 0.5s ease;
+        }
+
+        @keyframes neonBorder {
+            0% {
+                box-shadow: 0 0 5px #ff4d4d, 0 0 10px #ff4d4d, 0 0 15px #ff4d4d, 0 0 20px #ff4d4d;
+            }
+            100% {
+                box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d, 0 0 80px #ff4d4d;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1, p {
+            color: #2c3e50;
+            opacity: 0;
+            animation: fadeInText 1s ease-out forwards;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            animation-delay: 2.2s;
+        }
+
+        p {
+            font-size: 1.5rem;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 100%;
+            overflow: hidden;
+            position: absolute;
+            transition: transform 0.5s ease, left 2s ease, top 2s ease;
+            border: 3px solid #ff4d4d;
+            animation: neonBorderCircle 10s linear infinite;
+        }
+
+        @keyframes neonBorderCircle {
+            0% {
+                box-shadow: 0 0 100px #ff4d4d, 0 0 100px #ff4d4d, 0 0 150px #ff4d4d, 0 0 200px #ff4d4d;
+            }
+            100% {
+                box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d, 0 0 60px #ff4d4d, 0 0 80px #ff4d4d;
+            }
+        }
+
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .circle1 {
+            top: -60px;
+            left: -60px;
+            animation: moveInCircle1 2s ease-out forwards;
+        }
+
+        .circle2 {
+            top: -60px;
+            right: -60px;
+            animation: moveInCircle2 2s ease-out forwards;
+        }
+
+        .circle3 {
+            bottom: -60px;
+            left: -60px;
+            animation: moveInCircle3 2s ease-out forwards;
+        }
+
+        .circle4 {
+            bottom: -60px;
+            right: -60px;
+            animation: moveInCircle4 2s ease-out forwards;
+        }
+
+        @keyframes moveInCircle1 {
+            0% { top: -60px; left: -60px; }
+            100% { top: 40px; left: 40px; }
+        }
+
+        @keyframes moveInCircle2 {
+            0% { top: -60px; right: -60px; }
+            100% { top: 40px; right: 40px; }
+        }
+
+        @keyframes moveInCircle3 {
+            0% { bottom: -60px; left: -60px; }
+            100% { bottom: 40px; left: 40px; }
+        }
+
+        @keyframes moveInCircle4 {
+            0% { bottom: -60px; right: -60px; }
+            100% { bottom: 40px; right: 40px; }
+        }
+
+        .circle:hover {
+            transform: scale(1.6);
+        }
+
+        .circle:hover img {
+            transform: scale(1.3);
+        }
+
+        /* Khi hover vào các hình tròn, khung thiệp và chữ sẽ biến thành hình trái tim */
+        .circle:hover ~ .card {
+            transform: scale(1.5) rotate(-20deg);
+            border-radius: 50% 50% 50% 50% / 30% 30% 80% 80%;
+            background-color: rgba(255, 0, 0, 0.8); /* Màu nền khi hover */
+            color: #fff;
+        }
+
+        .circle:hover ~ .card h1,
+        .circle:hover ~ .card p {
+            color: #fff; /* Làm sáng chữ khi hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Các hình tròn chứa hình ảnh trên nền background -->
+    <div class="circle circle1">
+        <img src="lá.jpg" alt="Hình 1">
+    </div>
+    <div class="circle circle2">
+        <img src="nón đỏ.jpg" alt="Hình 2">
+    </div>
+    <div class="circle circle3">
+        <img src="hoa.jpg" alt="Hình 3">
+    </div>
+    <div class="circle circle4">
+        <img src="lá 2.jpg" alt="Hình 4">
+    </div>
+
+    <!-- Thiệp Chúc Mừng -->
+    <div class="card">
+        <h1>Chúc Mừng 20/11</h1>
+        <p>Gửi cô Hằng,<br>
+       Em chúc cô 20-11 zui zẻ,em mong cô hết bệnh,em sẽ cố chăm học hơn để cho cô đỡ phải mệt vì la em =))</p>
+        <p><strong>FROM NGƯỜI GIẤU TÊN</strong></p>
+    </div>
+</body>
+</html>
